@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MMA DEV | Mohamed Mostafa</title>
+  <meta name="description" content="MMA DEV — الموقع الرسمي للمطور Mohamed Mostafa. تطبيقات وبرمجيات وتجارب رقمية منشورة على Google Play." />
+  <meta name="author" content="Mohamed Mostafa" />
+  <meta name="theme-color" content="#f7f9ff" />
+  <link rel="canonical" href="https://mmadev.site/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MMA DEV | Mohamed Mostafa" />
+  <meta property="og:description" content="Game & Software Developer — Apps, software and digital products." />
+  <meta property="og:url" content="https://mmadev.site/" />
+  <meta property="og:site_name" content="MMA DEV" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohamed Mostafa","url":"https://mmadev.site/","sameAs":["https://play.google.com/store/apps/dev?id=8492935961111201169&hl=ar"],"jobTitle":"Game & Software Developer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#f7f9ff;
+      --paper:#ffffff;
+      --paper-2:#f0f5ff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#dfe7f3;
+      --blue:#2563eb;
+      --blue-2:#0ea5e9;
+      --violet:#7c3aed;
+      --green:#16a34a;
+      --star:#f59e0b;
+      --shadow:0 26px 70px rgba(37,99,235,.10);
+      --shadow-soft:0 14px 40px rgba(15,23,42,.07);
+      --radius:28px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Tajawal',system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 10% 5%,rgba(14,165,233,.10),transparent 24%),
+        radial-gradient(circle at 90% 8%,rgba(124,58,237,.08),transparent 22%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background-image:linear-gradient(rgba(37,99,235,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.045) 1px,transparent 1px);
+      background-size:52px 52px;
+      mask-image:linear-gradient(to bottom,black,transparent 72%);
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+    /* NAV */
+    .nav-wrap{position:fixed;inset-inline:0;top:18px;z-index:1000;pointer-events:none}
+    nav{
+      pointer-events:auto;width:min(var(--max),calc(100% - 40px));margin:auto;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:11px 14px 11px 16px;border:1px solid rgba(148,163,184,.28);
+      border-radius:20px;background:rgba(255,255,255,.80);backdrop-filter:blur(20px) saturate(160%);
+      box-shadow:0 12px 40px rgba(15,23,42,.08);transition:.28s ease;
+    }
+    nav.scrolled{top:8px;background:rgba(255,255,255,.94);box-shadow:0 18px 45px rgba(15,23,42,.11)}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;direction:ltr}
+    .brand-mark{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,var(--blue),var(--blue-2) 58%,var(--violet));
+      box-shadow:0 10px 24px rgba(37,99,235,.23);
+    }
+    .brand-mark::after{content:"";position:absolute;width:34px;height:34px;border:2px solid rgba(255,255,255,.18);border-radius:11px;transform:rotate(45deg)}
+    .brand-mark b{position:relative;z-index:1;font:800 12px 'Space Grotesk',sans-serif;color:#fff;letter-spacing:-.6px}
+    .brand-copy{display:grid;line-height:1.08}
+    .brand-copy strong{font:700 17px 'Space Grotesk',sans-serif;letter-spacing:-.5px}
+    .brand-copy small{color:var(--muted);font-size:9px;letter-spacing:1.8px;text-transform:uppercase;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+    .nav-links a{display:block;text-decoration:none;color:#475569;font-size:13px;font-weight:700;padding:10px 13px;border-radius:12px;transition:.2s}
+    .nav-links a:hover{color:var(--blue);background:#eff6ff}
+    .nav-links .nav-cta{color:#fff;background:linear-gradient(135deg,var(--blue),#4f46e5);padding-inline:18px;box-shadow:0 9px 22px rgba(37,99,235,.18)}
+    .nav-links .nav-cta:hover{color:#fff;background:linear-gradient(135deg,#1d4ed8,#4338ca);transform:translateY(-1px)}
+    .menu-btn{display:none;border:0;background:#eff6ff;color:var(--blue);width:42px;height:42px;border-radius:12px;cursor:pointer}
+
+    /* HERO */
+    .hero{min-height:100svh;display:flex;align-items:center;padding:132px 0 82px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:76px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);color:#334155;font-size:12px;font-weight:800;margin-bottom:22px}
+    .eyebrow .pulse{width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 0 6px rgba(22,163,74,.10)}
+    .hero h1{font-size:clamp(52px,7.4vw,96px);line-height:.91;letter-spacing:-4px;font-weight:900;direction:ltr;text-align:right;font-family:'Space Grotesk','Tajawal',sans-serif}
+    .hero h1 span{display:block}
+    .hero h1 .gradient{background:linear-gradient(105deg,var(--blue),var(--blue-2) 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:8px}
+    .hero-role{font-family:'Space Grotesk','Tajawal',sans-serif;direction:ltr;text-align:right;color:#475569;letter-spacing:2.4px;font-size:13px;font-weight:700;margin-top:25px;text-transform:uppercase}
+    .hero p.lead{max-width:650px;color:var(--muted);font-size:17px;line-height:2;margin-top:18px}
+    .hero p.lead strong{color:var(--text)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:12px 23px;border-radius:15px;text-decoration:none;font-weight:800;font-size:13px;border:1px solid transparent;transition:.22s ease;cursor:pointer}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--blue),#4f46e5);box-shadow:0 14px 28px rgba(37,99,235,.20)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(37,99,235,.25)}
+    .btn-soft{background:#fff;border-color:var(--line);color:#334155;box-shadow:var(--shadow-soft)}
+    .btn-soft:hover{border-color:#bfdbfe;color:var(--blue);transform:translateY(-2px)}
+    .arrow{font-size:18px;line-height:1}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:640px;margin-top:34px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.72);overflow:hidden;box-shadow:var(--shadow-soft)}
+    .hero-stat{padding:16px 18px;border-left:1px solid var(--line)}
+    .hero-stat:last-child{border-left:0}
+    .hero-stat strong{display:block;color:var(--blue);font:700 25px 'Space Grotesk',sans-serif;direction:ltr}
+    .hero-stat span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+
+    /* HERO ART */
+    .hero-art{min-height:580px;position:relative;display:grid;place-items:center;perspective:1200px}
+    .halo{position:absolute;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.17),rgba(14,165,233,.07) 42%,transparent 70%);filter:blur(2px)}
+    .orbit{position:absolute;border:1px solid rgba(37,99,235,.16);border-radius:50%;width:490px;height:490px;animation:spin 24s linear infinite}
+    .orbit.two{width:410px;height:410px;border-style:dashed;animation-duration:32s;animation-direction:reverse}
+    .orbit::before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--blue);top:15%;left:12%;box-shadow:0 0 0 8px rgba(37,99,235,.10)}
+    .dev-card{position:relative;z-index:3;width:min(430px,88%);background:rgba(255,255,255,.90);border:1px solid rgba(191,219,254,.8);border-radius:32px;box-shadow:0 40px 90px rgba(37,99,235,.17);overflow:hidden;transform:rotateY(-5deg) rotateX(2deg);transition:.18s ease-out}
+    .dev-card-top{height:48px;display:flex;align-items:center;gap:7px;padding:0 18px;border-bottom:1px solid var(--line);background:#fbfdff;direction:ltr}
+    .dot{width:9px;height:9px;border-radius:50%;background:#cbd5e1}.dot:nth-child(1){background:#fb7185}.dot:nth-child(2){background:#fbbf24}.dot:nth-child(3){background:#4ade80}
+    .file-pill{margin-left:auto;background:#eff6ff;color:var(--blue);font:600 10px 'Space Grotesk',sans-serif;padding:6px 10px;border-radius:999px}
+    .code{padding:30px;direction:ltr;text-align:left;font-family:'Space Grotesk',monospace;font-size:13px;line-height:1.95;color:#334155;background:linear-gradient(#fff,#fbfdff)}
+    .code .n{color:#94a3b8}.code .k{color:#7c3aed;font-weight:700}.code .s{color:#0284c7}.code .f{color:#2563eb;font-weight:700}.code .c{color:#16a34a}
+    .code-result{margin:0 20px 20px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe;display:flex;align-items:center;gap:14px;direction:ltr}
+    .result-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--blue),var(--violet));display:grid;place-items:center;color:#fff;font-weight:900;font-family:'Space Grotesk'}
+    .code-result b{display:block;font-family:'Space Grotesk';font-size:13px}.code-result small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+    .float-chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.90);border:1px solid var(--line);box-shadow:0 20px 50px rgba(15,23,42,.10);padding:11px 14px;border-radius:16px;direction:ltr;animation:float 5s ease-in-out infinite}
+    .float-chip b{font:700 11px 'Space Grotesk';display:block}.float-chip small{font-size:9px;color:var(--muted);display:block;margin-top:1px}
+    .chip-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#eff6ff;color:var(--blue);font-weight:900}
+    .chip-a{left:-1%;top:19%}.chip-b{right:-4%;bottom:20%;animation-delay:.8s}
+
+    /* SECTIONS */
+    section.block{padding:105px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:38px}
+    .section-kicker{font:700 11px 'Space Grotesk','Tajawal';text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:8px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-1.4px;font-weight:900}
+    .section-head h2 em{font-style:normal;color:var(--blue)}
+    .section-head p{max-width:520px;color:var(--muted);font-size:14px}
+
+    /* FEATURE STRIP */
+    .capabilities{padding-top:0!important}
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cap{background:rgba(255,255,255,.82);border:1px solid var(--line);padding:22px;border-radius:22px;box-shadow:var(--shadow-soft);transition:.22s}
+    .cap:hover{transform:translateY(-4px);border-color:#bfdbfe}
+    .cap .num{font:700 11px 'Space Grotesk';color:#94a3b8}.cap h3{font-size:15px;margin-top:20px}.cap p{font-size:12px;color:var(--muted);margin-top:5px}
+    .cap-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#eff6ff,#eef2ff);color:var(--blue);font-weight:900;font-size:17px;float:left}
+
+    /* APPS */
+    .apps-section{background:linear-gradient(180deg,rgba(239,246,255,.70),rgba(255,255,255,.72));border-block:1px solid #e6edf7}
+    .apps-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 16px;margin-bottom:24px;box-shadow:var(--shadow-soft)}
+    .apps-toolbar p{font-size:13px;color:var(--muted)}
+    .apps-counter{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:14px;background:#eff6ff;color:var(--blue);white-space:nowrap}
+    .apps-counter strong{font:700 20px 'Space Grotesk';direction:ltr}.apps-counter span{font-size:10px;font-weight:800}
+    .apps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .app-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:var(--shadow-soft);transition:.28s ease;min-width:0}
+    .app-card:hover{transform:translateY(-7px);box-shadow:0 28px 70px rgba(37,99,235,.13);border-color:#bfdbfe}
+    .app-media{height:215px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e0ecff,#eef2ff)}
+    .app-media>img{width:100%;height:100%;object-fit:cover;transition:.45s ease}
+    .app-card:hover .app-media>img{transform:scale(1.045)}
+    .app-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,.18),transparent 55%);pointer-events:none}
+    .app-icon{position:absolute;right:16px;bottom:16px;width:62px;height:62px;border-radius:18px;overflow:hidden;border:3px solid rgba(255,255,255,.95);background:#fff;box-shadow:0 12px 28px rgba(15,23,42,.18);z-index:2}
+    .app-icon img{width:100%;height:100%;object-fit:cover}
+    .app-category{position:absolute;left:14px;top:14px;z-index:2;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.9);font-size:10px;font-weight:800;color:#334155;backdrop-filter:blur(10px)}
+    .app-body{display:flex;flex-direction:column;flex:1;padding:22px}
+    .app-name{font-size:20px;font-weight:900;line-height:1.35;margin-bottom:7px}
+    .app-desc{font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:66px}
+    .app-meta{display:flex;align-items:center;gap:12px;margin-top:18px;margin-bottom:17px}
+    .meta-pill{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;padding:7px 9px;border-radius:10px;background:#f8fafc;border:1px solid #edf2f7}
+    .meta-pill.star{color:#b45309;background:#fffbeb}.meta-pill.download{color:#166534;background:#f0fdf4}
+    .app-actions{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:auto;padding-top:17px;border-top:1px solid #edf2f7}
+    .app-open{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;min-height:44px;border-radius:13px;background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;font-size:12px;font-weight:800}
+    .app-store{display:grid;place-items:center;min-width:44px;border-radius:13px;border:1px solid var(--line);text-decoration:none;color:var(--blue);font-weight:900;transition:.2s}.app-store:hover{background:#eff6ff}
+    .apps-message{grid-column:1/-1;min-height:220px;display:grid;place-items:center;text-align:center;background:#fff;border:1px dashed #bfdbfe;border-radius:26px;padding:30px;color:var(--muted)}
+    .apps-message .loader{width:34px;height:34px;border-radius:50%;border:3px solid #dbeafe;border-top-color:var(--blue);animation:spin 1s linear infinite;margin:0 auto 13px}
+    .apps-message strong{display:block;color:var(--text);margin-bottom:5px}
+    .apps-message a,.apps-message button{display:inline-flex;margin-top:12px;text-decoration:none;border:0;background:#eff6ff;color:var(--blue);padding:9px 13px;border-radius:12px;font-weight:800;cursor:pointer}
+    .show-more{text-align:center;margin-top:28px;display:none}
+
+    /* ABOUT / CONTACT */
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}
+    .identity-card{background:linear-gradient(145deg,#0f172a,#1e3a8a 70%,#312e81);color:#fff;border-radius:30px;padding:34px;min-height:390px;position:relative;overflow:hidden;box-shadow:0 34px 80px rgba(15,23,42,.18)}
+    .identity-card::before,.identity-card::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+    .identity-card::before{width:290px;height:290px;left:-120px;top:-90px}.identity-card::after{width:220px;height:220px;right:-100px;bottom:-70px}
+    .identity-mark{width:74px;height:74px;border-radius:22px;background:#fff;color:var(--blue);display:grid;place-items:center;font:800 18px 'Space Grotesk';box-shadow:0 16px 34px rgba(0,0,0,.18)}
+    .identity-card h3{font:700 32px 'Space Grotesk';direction:ltr;text-align:right;margin-top:90px}.identity-card p{color:#cbd5e1;font-size:13px;margin-top:8px;max-width:340px}.identity-card .domain{display:inline-flex;margin-top:22px;padding:7px 10px;border:1px solid rgba(255,255,255,.17);border-radius:999px;font:600 10px 'Space Grotesk';direction:ltr}
+    .about-copy{background:#fff;border:1px solid var(--line);border-radius:30px;padding:34px;box-shadow:var(--shadow-soft)}
+    .about-copy h2{font-size:34px;line-height:1.2}.about-copy>p{color:var(--muted);font-size:14px;line-height:2;margin-top:14px}
+    .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.skill{padding:8px 11px;border-radius:999px;background:#f8fafc;border:1px solid var(--line);color:#475569;font-size:11px;font-weight:800}
+    .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .contact-main{background:#fff;border:1px solid var(--line);border-radius:30px;padding:36px;box-shadow:var(--shadow-soft)}
+    .contact-main h2{font-size:38px;line-height:1.15}.contact-main p{color:var(--muted);font-size:14px;margin-top:12px;max-width:560px}
+    .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .contact-side{display:grid;gap:12px}.contact-tile{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;text-decoration:none;box-shadow:var(--shadow-soft);transition:.2s}.contact-tile:hover{border-color:#bfdbfe;transform:translateY(-3px)}.contact-tile small{display:block;color:var(--muted);font-size:10px}.contact-tile b{display:block;margin-top:4px;font-size:13px;word-break:break-word}
+
+    footer{padding:28px 0 36px;border-top:1px solid var(--line);background:rgba(255,255,255,.55)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--muted);font-size:11px}
+    .footer-inner .brand-copy strong{color:var(--text)}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+    @media(max-width:1000px){
+      .hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{text-align:center}.hero h1,.hero-role{text-align:center}.hero p.lead{margin-inline:auto}.hero-actions{justify-content:center}.hero-stats{margin-inline:auto}.hero-art{min-height:500px;order:-1}.cap-grid{grid-template-columns:repeat(2,1fr)}.apps-grid{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}.identity-card{min-height:320px}.identity-card h3{margin-top:60px}
+    }
+    @media(max-width:760px){
+      .wrap{width:min(100% - 28px,var(--max))}.nav-wrap{top:10px}nav{width:calc(100% - 28px)}.nav-links{position:absolute;top:62px;right:0;left:0;margin:auto;width:100%;display:none;flex-direction:column;align-items:stretch;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:18px;padding:9px;box-shadow:var(--shadow-soft)}.nav-links.open{display:flex}.nav-links a{text-align:center}.menu-btn{display:grid;place-items:center}.hero{padding-top:105px}.hero h1{font-size:52px;letter-spacing:-2.4px}.hero-art{min-height:410px}.dev-card{width:300px;border-radius:25px}.code{font-size:10px;padding:20px}.orbit{width:350px;height:350px}.orbit.two{width:300px;height:300px}.float-chip{padding:9px 10px}.chip-a{left:0}.chip-b{right:0}.hero-stats{grid-template-columns:1fr}.hero-stat{border-left:0;border-bottom:1px solid var(--line);text-align:center}.hero-stat:last-child{border-bottom:0}.section-head{align-items:start;flex-direction:column}.cap-grid{grid-template-columns:1fr}.apps-toolbar{align-items:flex-start;flex-direction:column}.apps-grid{grid-template-columns:1fr}.app-media{height:205px}.about-copy,.contact-main{padding:25px}.contact-main h2{font-size:31px}.footer-inner{flex-direction:column;text-align:center}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.dev-card{transform:none!important}}
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav id="navbar">
+      <a class="brand" href="#home" aria-label="MMA DEV Home">
+        <span class="brand-mark"><b>MMA</b></span>
+        <span class="brand-copy"><strong>MMA DEV</strong><small>mohamed mostafa</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#apps">التطبيقات</a></li>
+        <li><a href="#about">عنّي</a></li>
+        <li><a class="nav-cta" href="#contact">تواصل معي</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse"></span> الموقع الرسمي لـ Mohamed Mostafa</div>
+          <h1><span>MOHAMED</span><span class="gradient">MOSTAFA</span></h1>
+          <div class="hero-role">GAME · SOFTWARE · MOBILE DEVELOPER</div>
+          <p class="lead">أبني منتجات رقمية تجمع بين <strong>الفكرة الواضحة، الأداء القوي، والتجربة النظيفة</strong> — من التطبيقات والبرمجيات إلى تجارب الألعاب.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apps">استعرض التطبيقات <span class="arrow">←</span></a>
+            <a class="btn btn-soft" href="#contact">ابدأ مشروعك</a>
+          </div>
+          <div class="hero-stats" aria-label="إحصائيات Google Play">
+            <div class="hero-stat"><strong id="publishedAppsCount">—</strong><span>تطبيق منشور</span></div>
+            <div class="hero-stat"><strong id="averageRating">—</strong><span>متوسط التقييم</span></div>
+            <div class="hero-stat"><strong id="totalDownloads">—</strong><span>إجمالي التحميلات</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" id="heroArt" aria-hidden="true">
+          <div class="halo"></div><div class="orbit"></div><div class="orbit two"></div>
+          <div class="dev-card" id="devCard">
+            <div class="dev-card-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="file-pill">mmadev.site</span></div>
+            <div class="code"><span class="n">01</span> <span class="k">const</span> developer = {<br><span class="n">02</span>&nbsp;&nbsp;name: <span class="s">'Mohamed Mostafa'</span>,<br><span class="n">03</span>&nbsp;&nbsp;brand: <span class="s">'MMA DEV'</span>,<br><span class="n">04</span>&nbsp;&nbsp;build: [<span class="s">'Apps'</span>, <span class="s">'Games'</span>, <span class="s">'Software'</span>],<br><span class="n">05</span>&nbsp;&nbsp;focus: <span class="s">'Useful products'</span><br><span class="n">06</span> };<br><br><span class="n">07</span> <span class="f">ship</span>(developer); <span class="c">// ready ✓</span></div>
+            <div class="code-result"><div class="result-icon">MMA</div><div><b>Product shipped successfully</b><small>Design · Build · Publish · Improve</small></div></div>
+          </div>
+          <div class="float-chip chip-a"><span class="chip-icon">⌘</span><div><b>CLEAN BUILD</b><small>SOFTWARE</small></div></div>
+          <div class="float-chip chip-b"><span class="chip-icon">▶</span><div><b>PLAY READY</b><small>GAMES & APPS</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block capabilities">
+      <div class="wrap cap-grid">
+        <article class="cap reveal"><span class="cap-icon">01</span><span class="num">APP DEVELOPMENT</span><h3>تطبيقات عملية</h3><p>تجارب سريعة وواضحة مصممة للاستخدام الحقيقي.</p></article>
+        <article class="cap reveal"><span class="cap-icon">02</span><span class="num">SOFTWARE</span><h3>برمجيات ذكية</h3><p>حلول منظمة وقابلة للتطوير بدل التعقيد غير الضروري.</p></article>
+        <article class="cap reveal"><span class="cap-icon">03</span><span class="num">GAME DEV</span><h3>تجارب ألعاب</h3><p>أفكار تفاعلية بهوية بصرية وأداء محسوب.</p></article>
+        <article class="cap reveal"><span class="cap-icon">04</span><span class="num">PUBLISH</span><h3>من الفكرة للنشر</h3><p>اهتمام بالمنتج حتى يصل للمستخدم بصورة احترافية.</p></article>
+      </div>
+    </section>
+
+    <section class="block apps-section" id="apps">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div><div class="section-kicker">Published products</div><h2>تطبيقاتي على <em>Google Play</em></h2></div>
+          <p>القسم ده متصل بنفس مصدر البيانات الحالي، لذلك أي تطبيقات يرجعها endpoint الخاص بك تظهر هنا تلقائيًا.</p>
+        </header>
+        <div class="apps-toolbar reveal">
+          <p>جميع التطبيقات المنشورة رسميًا على حساب Mohamed Mostafa DEV ويتم تحديثها تلقائيًا.</p>
+          <div class="apps-counter"><strong id="appsCount">—</strong><span>تطبيق متاح</span></div>
+        </div>
+        <div class="apps-grid" id="appsGrid" aria-live="polite"></div>
+        <div class="show-more" id="showMoreWrap"><button class="btn btn-soft" id="showMoreBtn" type="button">عرض المزيد</button></div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="wrap">
+        <header class="section-head reveal"><div><div class="section-kicker">About the developer</div><h2>هوية بسيطة، <em>منتجات أقوى.</em></h2></div><p>MMA DEV هو الاسم المختصر لـ Mohamed Mostafa Abbas + Developer؛ هوية مناسبة للتطبيقات والبرامج والألعاب بدون حصر البراند في مجال واحد.</p></header>
+        <div class="about-grid">
+          <div class="identity-card reveal"><div class="identity-mark">MMA</div><h3>MMA DEV</h3><p>Game & Software Developer focused on building useful, polished digital products.</p><span class="domain">mmadev.site</span></div>
+          <div class="about-copy reveal"><h2>Mohamed Mostafa</h2><p>مطور يهتم بأن يكون المنتج واضحًا وسريعًا ومريحًا للمستخدم. الهدف مش مجرد كتابة كود؛ الهدف منتج مكتمل يقدر المستخدم يعتمد عليه، مع تطوير مستمر بناءً على الاستخدام الحقيقي.</p><div class="skills"><span class="skill">Android</span><span class="skill">Java / Kotlin</span><span class="skill">Firebase</span><span class="skill">UI / UX</span><span class="skill">Google Play</span><span class="skill">Software</span><span class="skill">Game Development</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-main reveal"><div class="section-kicker">Start a project</div><h2>عندك فكرة؟<br>خلّيها <span style="color:var(--blue)">منتج حقيقي.</span></h2><p>للتعاون، تنفيذ تطبيق أو مشروع برمجي، أو للاستفسار عن المنتجات المنشورة — تواصل مباشرة.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:mohamedmostafaabasmostafa@gmail.com">راسلني بالبريد</a><a class="btn btn-soft" href="https://play.google.com/store/apps/dev?id=8492935961111201169&hl=ar" target="_blank" rel="noopener">Google Play</a></div></div>
+        <div class="contact-side">
+          <a class="contact-tile reveal" href="mailto:mohamedmostafaabasmostafa@gmail.com"><small>EMAIL</small><b>mohamedmostafaabasmostafa@gmail.com</b></a>
+          <a class="contact-tile reveal" href="tel:+201014708433"><small>PHONE</small><b dir="ltr">+20 101 470 8433</b></a>
+          <a class="contact-tile reveal" href="https://play.google.com/store/apps/dev?id=8492935961111201169&hl=ar" target="_blank" rel="noopener"><small>STORE</small><b>Mohamed Mostafa DEV</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark"><b>MMA</b></span><span class="brand-copy"><strong>MMA DEV</strong><small>mmadev.site</small></span></a><span>© <span id="year"></span> Mohamed Mostafa · All rights reserved.</span></div></footer>
+
+<script>
+const DEVELOPER_URL = 'https://play.google.com/store/apps/dev?id=8492935961111201169&hl=ar';
+const INITIAL_APPS_LIMIT = 6;
+let appsData = [];
+let appsExpanded = false;
+
+function escapeHtml(value = '') {
+  return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+function formatCompactNumber(value) {
+  const number = Number(value || 0);
+  if (!number) return '—';
+  return new Intl.NumberFormat('ar-EG', { notation: 'compact', maximumFractionDigits: 1 }).format(number) + '+';
+}
+
+function setStoreStats(stats = {}) {
+  const rating = document.getElementById('averageRating');
+  const downloads = document.getElementById('totalDownloads');
+  if (rating) rating.textContent = Number(stats.averageRating) > 0 ? Number(stats.averageRating).toFixed(1) : '—';
+  if (downloads) downloads.textContent = formatCompactNumber(stats.totalMinInstalls);
+}
+
+function createAppCard(app, index) {
+  const name = escapeHtml(app.name || 'تطبيق');
+  const description = escapeHtml(app.description || 'متاح الآن على Google Play.');
+  const category = escapeHtml(app.category || 'تطبيق');
+  const rating = escapeHtml(app.rating || '—');
+  const downloads = escapeHtml(app.downloads || 'Google Play');
+  const image = escapeHtml(app.image || app.icon || '');
+  const icon = escapeHtml(app.icon || app.image || '');
+  const url = escapeHtml(app.url || DEVELOPER_URL);
+  const buttonText = escapeHtml(app.buttonText || 'عرض التطبيق');
+
+  return `
+    <article class="app-card reveal" style="transition-delay:${Math.min(index * 55, 275)}ms">
+      <div class="app-media">
+        <img src="${image}" alt="واجهة تطبيق ${name}" loading="lazy" onerror="this.src='${icon}'">
+        <span class="app-category">${category}</span>
+        <span class="app-icon"><img src="${icon}" alt="أيقونة ${name}" loading="lazy"></span>
+      </div>
+      <div class="app-body">
+        <h3 class="app-name">${name}</h3>
+        <p class="app-desc">${description}</p>
+        <div class="app-meta">
+          <span class="meta-pill star">★ ${rating}</span>
+          <span class="meta-pill download">↓ ${downloads}</span>
+        </div>
+        <div class="app-actions">
+          <a class="app-open" href="${url}" target="_blank" rel="noopener noreferrer">${buttonText} <span>↗</span></a>
+          <a class="app-store" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="فتح ${name} على Google Play">▶</a>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderApps() {
+  const grid = document.getElementById('appsGrid');
+  const counter = document.getElementById('appsCount');
+  const heroCount = document.getElementById('publishedAppsCount');
+  const wrap = document.getElementById('showMoreWrap');
+  const btn = document.getElementById('showMoreBtn');
+  if (!grid) return;
+
+  const total = appsData.length;
+  if (counter) counter.textContent = total;
+  if (heroCount) heroCount.textContent = total;
+
+  if (!total) {
+    grid.innerHTML = `<div class="apps-message"><div><strong>لا توجد تطبيقات متاحة للعرض حاليًا</strong><span>يمكنك فتح حساب المطوّر مباشرة على Google Play.</span><br><a href="${DEVELOPER_URL}" target="_blank" rel="noopener">فتح Google Play</a></div></div>`;
+    if (wrap) wrap.style.display = 'none';
+    return;
+  }
+
+  const visible = appsExpanded ? appsData : appsData.slice(0, INITIAL_APPS_LIMIT);
+  grid.innerHTML = visible.map(createAppCard).join('');
+  if (wrap && btn) {
+    const hasMore = total > INITIAL_APPS_LIMIT;
+    wrap.style.display = hasMore ? 'block' : 'none';
+    btn.textContent = appsExpanded ? 'عرض أقل ↑' : `عرض كل التطبيقات (${total}) ↓`;
+  }
+  observeReveals();
+}
+
+async function loadApps() {
+  const grid = document.getElementById('appsGrid');
+  if (grid) grid.innerHTML = `<div class="apps-message"><div><div class="loader"></div><strong>جاري تحميل التطبيقات</strong><span>يتم جلب أحدث البيانات من Google Play…</span></div></div>`;
+
+  try {
+    /* نفس طريقة الاستدعاء الموجودة في موقعك الحالي — لم يتم تغيير الـ endpoint */
+    const response = await fetch('/api/play-apps', { headers: { Accept: 'application/json' }, cache: 'no-store' });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload?.details?.direct || payload?.error || 'PLAY_STORE_API_ERROR');
+    appsData = Array.isArray(payload.apps) ? payload.apps : [];
+    setStoreStats(payload.stats || {});
+    renderApps();
+  } catch (error) {
+    appsData = [];
+    ['appsCount','publishedAppsCount','averageRating','totalDownloads'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.textContent = '—';
+    });
+    if (grid) grid.innerHTML = `<div class="apps-message"><div><strong>تعذر جلب التطبيقات الآن</strong><span>تأكد أن /api/play-apps موجود في نفس مشروع الاستضافة.</span><br><button type="button" onclick="loadApps()">إعادة المحاولة</button> <a href="${DEVELOPER_URL}" target="_blank" rel="noopener">Google Play</a></div></div>`;
+  }
+}
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+}, { threshold: .10 });
+function observeReveals(){ document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el)); }
+observeReveals();
+
+document.getElementById('showMoreBtn')?.addEventListener('click', () => { appsExpanded = !appsExpanded; renderApps(); });
+
+document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', e => {
+  const target = document.querySelector(link.getAttribute('href'));
+  if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  document.getElementById('navLinks')?.classList.remove('open');
+  document.getElementById('menuBtn')?.setAttribute('aria-expanded','false');
+}));
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn?.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+
+window.addEventListener('scroll', () => document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 35));
+
+const heroArt = document.getElementById('heroArt');
+const devCard = document.getElementById('devCard');
+if (heroArt && devCard && matchMedia('(hover:hover)').matches) {
+  heroArt.addEventListener('mousemove', e => {
+    const r = heroArt.getBoundingClientRect();
+    const x = (e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    devCard.style.transform = `rotateY(${-5+x*9}deg) rotateX(${2-y*7}deg) translateY(-2px)`;
+  });
+  heroArt.addEventListener('mouseleave', () => devCard.style.transform='rotateY(-5deg) rotateX(2deg)');
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+loadApps();
+</script>
+</body>
+</html>
