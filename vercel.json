@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/khatmati",
+      "destination": "https://khatmati1.blogspot.com/"
+    },
+    {
+      "source": "/khatmati/:path*",
+      "destination": "https://khatmati1.blogspot.com/:path*"
+    }
+  ]
+}
