@@ -6,8 +6,52 @@
       "destination": "https://khatmati1.blogspot.com/"
     },
     {
+      "source": "/khatmati/p/privacy-policy.html",
+      "destination": "https://khatmati1.blogspot.com/p/privacy-policy.html"
+    },
+    {
+      "source": "/khatmati/p/data-deletion.html",
+      "destination": "https://khatmati1.blogspot.com/p/data-deletion.html"
+    },
+    {
+      "source": "/khatmati/p/contact.html",
+      "destination": "https://khatmati1.blogspot.com/p/contact.html"
+    },
+    {
+      "source": "/khatmati/p/about.html",
+      "destination": "https://khatmati1.blogspot.com/p/about.html"
+    },
+    {
+      "source": "/khatmati/p/dev-team.html",
+      "destination": "https://khatmati1.blogspot.com/p/dev-team.html"
+    },
+    {
       "source": "/khatmati/:path*",
       "destination": "https://khatmati1.blogspot.com/:path*"
+    },
+    {
+      "source": "/lamma",
+      "destination": "https://lamma-app.blogspot.com/"
+    },
+    {
+      "source": "/lamma/p/privacy-policy.html",
+      "destination": "https://lamma-app.blogspot.com/p/privacy-policy.html"
+    },
+    {
+      "source": "/lamma/p/data-deletion.html",
+      "destination": "https://lamma-app.blogspot.com/p/data-deletion.html"
+    },
+    {
+      "source": "/lamma/p/contact.html",
+      "destination": "https://lamma-app.blogspot.com/p/contact.html"
+    },
+    {
+      "source": "/lamma/p/about.html",
+      "destination": "https://lamma-app.blogspot.com/p/about.html"
+    },
+    {
+      "source": "/lamma/:path*",
+      "destination": "https://lamma-app.blogspot.com/:path*"
     }
   ]
 }
