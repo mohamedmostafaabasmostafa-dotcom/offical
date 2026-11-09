@@ -52,6 +52,30 @@
     {
       "source": "/lamma/:path*",
       "destination": "https://lamma-app.blogspot.com/:path*"
+    },
+    {
+      "source": "/ebsim",
+      "destination": "https://ebsim.blogspot.com/"
+    },
+    {
+      "source": "/ebsim/p/privacy-policy.html",
+      "destination": "https://ebsim.blogspot.com/p/privacy-policy.html"
+    },
+    {
+      "source": "/ebsim/p/data-deletion.html",
+      "destination": "https://ebsim.blogspot.com/p/data-deletion.html"
+    },
+    {
+      "source": "/ebsim/p/contact.html",
+      "destination": "https://ebsim.blogspot.com/p/contact.html"
+    },
+    {
+      "source": "/ebsim/p/about.html",
+      "destination": "https://ebsim.blogspot.com/p/about.html"
+    },
+    {
+      "source": "/ebsim/:path*",
+      "destination": "https://ebsim.blogspot.com/:path*"
     }
   ]
 }
