@@ -1,29 +1,21 @@
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/khatmati",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/khatmati",
       "destination": "https://khatmati1.blogspot.com/"
     },
     {
-      "source": "/khatmati/p/privacy-policy.html",
-      "destination": "https://khatmati1.blogspot.com/p/privacy-policy.html"
-    },
-    {
-      "source": "/khatmati/p/data-deletion.html",
-      "destination": "https://khatmati1.blogspot.com/p/data-deletion.html"
-    },
-    {
-      "source": "/khatmati/p/contact.html",
-      "destination": "https://khatmati1.blogspot.com/p/contact.html"
-    },
-    {
-      "source": "/khatmati/p/about.html",
-      "destination": "https://khatmati1.blogspot.com/p/about.html"
-    },
-    {
-      "source": "/khatmati/p/dev-team.html",
-      "destination": "https://khatmati1.blogspot.com/p/dev-team.html"
+      "source": "/khatmati/",
+      "destination": "https://khatmati1.blogspot.com/"
     },
     {
       "source": "/khatmati/:path*",
@@ -34,20 +26,8 @@
       "destination": "https://lamma-app.blogspot.com/"
     },
     {
-      "source": "/lamma/p/privacy-policy.html",
-      "destination": "https://lamma-app.blogspot.com/p/privacy-policy.html"
-    },
-    {
-      "source": "/lamma/p/data-deletion.html",
-      "destination": "https://lamma-app.blogspot.com/p/data-deletion.html"
-    },
-    {
-      "source": "/lamma/p/contact.html",
-      "destination": "https://lamma-app.blogspot.com/p/contact.html"
-    },
-    {
-      "source": "/lamma/p/about.html",
-      "destination": "https://lamma-app.blogspot.com/p/about.html"
+      "source": "/lamma/",
+      "destination": "https://lamma-app.blogspot.com/"
     },
     {
       "source": "/lamma/:path*",
@@ -58,20 +38,8 @@
       "destination": "https://ebsim.blogspot.com/"
     },
     {
-      "source": "/ebsim/p/privacy-policy.html",
-      "destination": "https://ebsim.blogspot.com/p/privacy-policy.html"
-    },
-    {
-      "source": "/ebsim/p/data-deletion.html",
-      "destination": "https://ebsim.blogspot.com/p/data-deletion.html"
-    },
-    {
-      "source": "/ebsim/p/contact.html",
-      "destination": "https://ebsim.blogspot.com/p/contact.html"
-    },
-    {
-      "source": "/ebsim/p/about.html",
-      "destination": "https://ebsim.blogspot.com/p/about.html"
+      "source": "/ebsim/",
+      "destination": "https://ebsim.blogspot.com/"
     },
     {
       "source": "/ebsim/:path*",
